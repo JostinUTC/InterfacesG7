@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Course</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Course Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="{% static 'public/styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'public/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'public/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'public/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'public/plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'public/styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'public/styles/responsive.css' %}">
+</head>
+<body>
+
+<div class="super_container">
+
+    <header class="header d-flex flex-row">
+        <div class="header_content d-flex flex-row align-items-center">
+            <div class="logo_container">
+                <div class="logo">
+                    <img src="{% static 'public/images/logo.png' %}" alt="">
+                    <span>course</span>
+                </div>
+            </div>
+
+            <nav class="main_nav_container">
+                <div class="main_nav">
+                    <ul class="main_nav_list">
+                        <li class="main_nav_item"><a href="{% url 'home' %}">Menu</a></li>
+                        <li class="main_nav_item"><a href="{% url 'login' %}">Login</a></li>
+                        <li class="main_nav_item"><a href="{% url 'courses' %}">Cursos</a></li>
+                        <li class="main_nav_item"><a href="{% url 'teachers' %}">Profesores</a></li>
+                        <li class="main_nav_item"><a href="{% url 'news' %}">Noticias</a></li>
+                        <li class="main_nav_item"><a href="{% url 'contact' %}">contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="header_side d-flex flex-row justify-content-center align-items-center">
+            <img src="{% static 'public/images/phone-call.svg' %}" alt="">
+            <span>+593 999999999</span>
+        </div>
+
+        <div class="hamburger_container">
+            <i class="fas fa-bars trans_200"></i>
+        </div>
+    </header>

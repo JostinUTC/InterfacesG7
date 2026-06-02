@@ -7,5 +7,5 @@ __pycache__/
 
 # --- ESTA ES LA PARTE QUE BUSCAS ---
 # Ignora tus configuraciones locales y claves de Postgres
-Proyecto_Practica2/settings.py
+config/settings.py
 db.sqlite3

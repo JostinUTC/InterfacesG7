@@ -14,8 +14,7 @@ def news(request):
    return render(request, 'news.html')
 def teachers(request):
    return render(request, 'teachers.html')
-def dashboard(request):
-   return render(request, 'dashboard.html')
+
 def login_view(request):
     mensaje = ''
 

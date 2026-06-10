@@ -12,4 +12,10 @@
     </form>
 </div>
 
+{% if mensaje %}
+<script>
+    alert("{{ mensaje }}");
+</script>
+{% endif %}
+
 {% include 'footer.html' %}

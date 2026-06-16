@@ -8,7 +8,16 @@
             <th>Matricula</th>
             <th>Nombre de usuarioo</th>
             <th>Correo institucional</th>
-       
+            <a type="button" class="btn btn-primary" style="border-radius: 100px">crear usuario</a>
+            {%if messages %}
+            {% for message in messages %}
+            <div class="alert alert-succes"> 
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            <span class="badge badge-primary px-3 py-2"></span>
+              Total de usuarios: {{ usuarios|length }}
         </tr>
     </thead>
     <tbody>

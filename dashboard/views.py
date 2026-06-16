@@ -1,5 +1,4 @@
-from pyexpat.errors import messages
-
+from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login as auth_login
@@ -14,7 +13,7 @@ def listar_usuarios(request):
          'usuarios': usuarios
    }
    return render(request, 'private/listar_usuarios.html', contexto)
-def crear_usuario(request):
+def crear_usuarios(request):
    if request.method == 'post':
       username = request.POST.get('username')
       email = request.POST.get('email')
@@ -22,14 +21,14 @@ def crear_usuario(request):
       #si no existe el usuario
       if User.object.filter(username=username).exists():
          messages.error(request, 'El usuario ya existe')
-         return render (request, 'private/crear_usuario.html')
+         return render (request, 'private/crear_usuarios.html')
       #si no existe el correo
       if User.object.filter(email=email).exists():
          messages.error(request, 'El correo ya existe')
-         return render (request, 'private/crear_usuario.html')
+         return render (request, 'private/crear_usuarios.html')
       #crear usuario
       User.objects.create_user(username=username,email=email,password=password)
       messages.success(request, 'Usuario creado exitosamente')
       return render(request, 'private/listar_usuarios.html')
-   return render(request, 'private/crear_usuario.html')
+   return render(request, 'private/crear_usuarios.html')
    

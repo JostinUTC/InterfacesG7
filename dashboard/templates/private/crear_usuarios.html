@@ -1,3 +1,5 @@
+{% load static %}
+
 {% include "private/header.html" %}
 <form action="" method= "post">
     {% csrf_token %}
@@ -14,7 +16,7 @@
         <label for="password">Contraseña:</label>
         <input type="password" name="password" class="form-control" required placeholder="Contraseña">
     </div>
-    <button  class="btn btn-success">Guardar</button>
-    <a href="" class="btn btn-danger">Cancelar</a>
+    <button  type="submit" class="btn btn-success">Guardar</button>
+    <a href="{% url 'listar_usuarios' %}" class="btn btn-danger">Cancelar</a>
 </form>
 {% include "private/footer.html" %}

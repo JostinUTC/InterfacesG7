@@ -32,7 +32,7 @@
             <td>{{ usuario.username }}</td>
             <td>{{ usuario.email }}</td>
             <td>
-                <a href="" class="btn btn-warning" style="border-radius: 100px"> Editar</a> 
+                <a href="{% url 'editar_usuario' id=usuario.id %}" class="btn btn-warning" style="border-radius: 100px"> Editar</a> 
                 <a href="{% url 'eliminar_usuario' id=usuario.id %}" class="btn btn-danger" style="border-radius: 100px" onclick="return confirm('¿Estás seguro de que quieres eliminar este usuario?')"> Eliminar</a>  
             </td>
         </tr>

@@ -1,0 +1,29 @@
+{% load static %}
+{% include "private/header2.html" %}
+
+<div class="container mt-4">
+    <h2>Crear Materia</h2>
+    <br>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="">Nombre de la Materia:</label>
+            <input type="text" name="nombreMateria" class="form-control" id="nombreMateria" required>
+        </div>
+        <div class="mb-3">
+            <label for="">Precio de la Materia:</label>
+            <input type="number" name="precioMateria" class="form-control" id="precioMateria" required>
+        </div>
+        <div class="mb-3">
+            <label for="">Créditos de la Materia:</label>
+            <input type="number" class="form-control" id="creditosMateria" name="creditosMateria" required>
+        </div>
+        <div class="mb-3">
+            <label for="">Número de Estudiantes:</label>
+            <input type="number" class="form-control" id="num_estudiantesMateria" name="num_estudiantesMateria" required>
+        </div>
+        <button type="submit" class="btn btn-success">Crear Materia</button>
+    </form>
+</div>
+
+{% include "private/footer.html" %}

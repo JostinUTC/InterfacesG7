@@ -9,3 +9,5 @@ __pycache__/
 # Ignora tus configuraciones locales y claves de Postgres
 config/settings.py
 db.sqlite3
+config/__pycache__/settings.cpython-313.pyc
+config/__pycache__/urls.cpython-313.pyc

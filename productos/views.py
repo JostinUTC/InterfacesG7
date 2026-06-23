@@ -1,3 +1,5 @@
+from django.contrib import messages
+
 from django.shortcuts import redirect, render
 from .models import Materia
 def listar_materias(request):
@@ -6,10 +8,10 @@ def listar_materias(request):
 # Create your views here.
 def crear_materias(request):
    if request.method== 'POST':
-      nombre_materia = request.POST.get("")
-      precio_materia = request.POST.get("")
-      creditos_materia = request.POST.get("")
-      num_estudiantes_materia = request.POST.get("")
+      nombre_materia = request.POST.get("nombreMateria")
+      precio_materia = request.POST.get("precioMateria")
+      creditos_materia = request.POST.get("creditosMateria")
+      num_estudiantes_materia = request.POST.get("num_estudiantesMateria")
 
       Materia.objects.create(
          nombre_materia = nombre_materia,
@@ -18,5 +20,28 @@ def crear_materias(request):
          num_estudiantes_materia = num_estudiantes_materia
 
       )
+      messages.success(request, 'Materia creada exitosamente')
       return redirect('listar_materias')
    return render(request, 'productos/crear_materias.html')
+
+def eliminar_materia(request, id):
+   materia = Materia.objects.get(id=id)
+   materia.delete()
+   messages.success(request, 'Materia eliminada exitosamente')
+   return redirect('listar_materias')
+
+def editar_materia(request, id):
+   materia = Materia.objects.get(id=id)
+   if request.method == 'POST':
+      materia.nombre_materia = request.POST.get("nombreMateria_edit")
+      materia.precio_materia = request.POST.get("precioMateria_edit")
+      materia.creditos_materia = request.POST.get("creditosMateria_edit")
+      materia.num_estudiantes_materia = request.POST.get("num_estudiantesMateria_edit")
+
+      materia.save()
+      messages.success(request, 'La materia se actualizo con exito')
+      return redirect('listar_materias')
+   contexto = {
+         "materia": materia
+   }
+   return render(request, 'productos/editar_materias.html', {'materia': materia})

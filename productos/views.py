@@ -1,7 +1,8 @@
 from django.shortcuts import redirect, render
 from .models import Materia
 def listar_materias(request):
-   return render(request, 'productos/listar_materias.html')
+   materias = Materia.objects.all()
+   return render(request, 'productos/listar_materias.html', {'materias': materias})
 # Create your views here.
 def crear_materias(request):
    if request.method== 'POST':

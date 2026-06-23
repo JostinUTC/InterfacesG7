@@ -8,19 +8,19 @@
         {% csrf_token %}
         <div class="mb-3">
             <label for="">Nuevo Nombre de la Materia:</label>
-            <input type="text" name="nombreMateria" class="form-control" id="nombreMateria" required>
+            <input type="text" name="nombreMateria" class="form-control" id="nombreMateria_edit" required>
         </div>
         <div class="mb-3">
             <label for="">Nuevo Precio de la Materia:</label>
-            <input type="number" name="precioMateria" class="form-control" id="precioMateria" required>
+            <input type="number" name="precioMateria" class="form-control" id="precioMateria_edit" required>
         </div>
         <div class="mb-3">
             <label for="">Cambiar Créditos de la Materia:</label>
-            <input type="number" class="form-control" id="creditosMateria" name="creditosMateria" required>
+            <input type="number" class="form-control" id="creditosMateria_edit" name="creditosMateria" required>
         </div>
         <div class="mb-3">
             <label for=""> Nuevo Número de Estudiantes:</label>
-            <input type="number" class="form-control" id="num_estudiantesMateria" name="num_estudiantesMateria" required>
+            <input type="number" class="form-control" id="num_estudiantesMateria_edit" name="num_estudiantesMateria" required>
         </div>
         <button type="submit" class="btn btn-success">Actualizar Materia</button>
         <a href="{% url 'listar_materias' %}" class="btn btn-danger">Cancelar</a>

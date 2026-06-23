@@ -41,7 +41,4 @@ def editar_materia(request, id):
       materia.save()
       messages.success(request, 'La materia se actualizo con exito')
       return redirect('listar_materias')
-   contexto = {
-         "materia": materia
-   }
    return render(request, 'productos/editar_materias.html', {'materia': materia})

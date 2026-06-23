@@ -1,5 +1,30 @@
 {% load static %}
 {% include "private/header2.html" %}
 
+<div class="container mt-4">
+    <h2>Editar Materia</h2>
+    <br>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="">Nuevo Nombre de la Materia:</label>
+            <input type="text" name="nombreMateria" class="form-control" id="nombreMateria" required>
+        </div>
+        <div class="mb-3">
+            <label for="">Nuevo Precio de la Materia:</label>
+            <input type="number" name="precioMateria" class="form-control" id="precioMateria" required>
+        </div>
+        <div class="mb-3">
+            <label for="">Cambiar Créditos de la Materia:</label>
+            <input type="number" class="form-control" id="creditosMateria" name="creditosMateria" required>
+        </div>
+        <div class="mb-3">
+            <label for=""> Nuevo Número de Estudiantes:</label>
+            <input type="number" class="form-control" id="num_estudiantesMateria" name="num_estudiantesMateria" required>
+        </div>
+        <button type="submit" class="btn btn-success">Actualizar Materia</button>
+        <a href="{% url 'listar_materias' %}" class="btn btn-danger">Cancelar</a>
+    </form>
+</div>
 
 {% include "private/footer.html" %}

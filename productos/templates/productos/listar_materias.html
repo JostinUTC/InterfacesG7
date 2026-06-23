@@ -1,4 +1,39 @@
 {% load static %}
 {% include "private/header2.html" %}
 
+<div class="container mt-4">
+    <h2>Lista de Materias</h2>
+    <br>
+    <a href="" class="btn btn-success">Crear Materia</a>
+    <br>
+</div>
+
+    <table class= "table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Créditos</th>
+                <th>Número de Estudiantes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for materia in materias %}
+            <tr>
+                <td>{{ materia.id}}</td>
+                <td>{{ materia.nombre_materia}}</td>
+                <td>{{ materia.precio_materia}}</td>
+                <td>{{ materia.creditos_materia}}</td>
+                <td>{{ materia.num_estudiantes_materia}}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td class="alert alert-danger">No hay materias disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
 {% include "private/footer.html" %}

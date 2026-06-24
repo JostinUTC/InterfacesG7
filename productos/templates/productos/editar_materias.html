@@ -22,9 +22,12 @@
             <label for=""> Nuevo Número de Estudiantes:</label>
             <input type="number" class="form-control" id="num_estudiantesMateria_edit" name="num_estudiantesMateria" required>
         </div>
-        <button type="submit" class="btn btn-outline-info">Actualizar Materia</button>
-        <a href="{% url 'listar_materias' %}" class="btn btn-outline-danger">Cancelar</a>
-    </form>
+       <button type="submit" class="btn btn-success">
+            <i class="bi bi-check-circle me-1"></i> Actualizar Materia
+        </button>
+        <a href="{% url 'listar_materias' %}" class="btn btn-outline-danger">
+            <i class="bi bi-arrow-left-circle me-1"></i> Cancelar
+        </a>
 </div>
 
 {% include "private/footer.html" %}

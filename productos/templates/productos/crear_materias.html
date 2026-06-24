@@ -8,12 +8,12 @@
     <form method="POST" action="">
         {% csrf_token %}
         <div class="mb-3">
-            <label for="">Nombre de la Materia:</label>
-            <input type="text" name="nombreMateria" class="form-control" id="nombreMateria" required>
+           <label for=""><i class="bi bi-book text-primary me-1"></i> Nombre de la Materia:</label>
+            <input type="text" name="nombreMateria" class="form-control shadow-sm" id="nombreMateria" required>
         </div>
         <div class="mb-3">
-            <label for="">Precio de la Materia:</label>
-            <input type="number" name="precioMateria" class="form-control" id="precioMateria" required>
+          <label for=""><i class="bi bi-currency-dollar text-success me-1"></i> Precio de la Materia:</label>
+            <input type="number" name="precioMateria" class="form-control shadow-sm" id="precioMateria" required>
         </div>
         <div class="mb-3">
             <label for="">Créditos de la Materia:</label>

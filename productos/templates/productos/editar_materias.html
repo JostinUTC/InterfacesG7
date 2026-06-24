@@ -8,19 +8,19 @@
     <form method="POST" action="">
         {% csrf_token %}
         <div class="mb-3">
-           <label for=""><i class="bi bi-book text-primary me-1"></i> Nuevo Nombre de la Materia:</label>
+           <label for=""><i class="bi bi-book text-primary me-1"></i> Nombre de la Materia:</label>
             <input type="text" name="nombreMateria" class="form-control shadow-sm" id="nombreMateria_edit" required>
         </div>
         <div class="mb-3">
-            <label for="">Nuevo Precio de la Materia:</label>
+            <label for="">Precio de la Materia:</label>
             <input type="number" name="precioMateria" class="form-control shadow-sm" id="precioMateria_edit" required>
         </div>
         <div class="mb-3">
-<label for=""><i class="bi bi-star-fill text-warning me-1"></i> Cambiar Créditos de la Materia:</label>
+<label for=""><i class="bi bi-star-fill text-warning me-1"></i>Créditos de la Materia:</label>
             <input type="number" class="form-control shadow-sm" id="creditosMateria_edit" name="creditosMateria" required>
         </div>
         <div class="mb-3">
-            <label for=""> Nuevo Número de Estudiantes:</label>
+            <label for="">Número de Estudiantes:</label>
             <input type="number" class="form-control shadow-sm" id="num_estudiantesMateria_edit" name="num_estudiantesMateria" required>
         </div>
        <button type="submit" class="btn btn-success">

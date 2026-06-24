@@ -22,8 +22,12 @@
             <label for="">Número de Estudiantes:</label>
             <input type="number" class="form-control" id="num_estudiantesMateria" name="num_estudiantesMateria" required>
         </div>
-        <button type="submit" class="btn btn-outline-info">Crear Materia</button>
-        <a href="{% url 'listar_materias' %}" class="btn btn-outline-danger">Cancelar</a>
+       <button type="submit" class="btn btn-success">
+            <i class="bi bi-check-circle me-1"></i> Crear Materia
+        </button>
+        <a href="{% url 'listar_materias' %}" class="btn btn-outline-danger">
+            <i class="bi bi-arrow-left-circle me-1"></i> Cancelar
+        </a>
     </form>
 </div>
 

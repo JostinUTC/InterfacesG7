@@ -33,10 +33,10 @@ def eliminar_materia(request, id):
 def editar_materia(request, id):
    materia = Materia.objects.get(id=id)
    if request.method == 'POST':
-      materia.nombre_materia = request.POST.get("nombreMateria_edit")
-      materia.precio_materia = request.POST.get("precioMateria_edit")
-      materia.creditos_materia = request.POST.get("creditosMateria_edit")
-      materia.num_estudiantes_materia = request.POST.get("num_estudiantesMateria_edit")
+      materia.nombre_materia = request.POST.get("nombreMateria")
+      materia.precio_materia = request.POST.get("precioMateria")
+      materia.creditos_materia = request.POST.get("creditosMateria")
+      materia.num_estudiantes_materia = request.POST.get("num_estudiantesMateria")
 
       materia.save()
       messages.success(request, 'La materia se actualizo con exito')

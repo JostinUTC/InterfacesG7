@@ -26,6 +26,10 @@
                 <td>{{ materia.precio_materia}}</td>
                 <td>{{ materia.creditos_materia}}</td>
                 <td>{{ materia.num_estudiantes_materia}}</td>
+                <td>
+                    <a href="{% url 'editar_materia' materia.id %}" class="btn btn-success">Editar</a>
+                    <a href="{% url 'eliminar_materia' materia.id %}" class="btn btn-danger">Eliminar</a>
+                </td>
             </tr>
             {% empty %}
             <tr>

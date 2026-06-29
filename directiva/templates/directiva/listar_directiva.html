@@ -1,0 +1,43 @@
+{% load static %}
+{% include "private/header2.html" %}
+
+<div class="container mt-4">
+    <h2>Lista de Directiva</h2>
+    <br>
+    <a href="{% url 'crear_directiva' %}" class="btn btn-dark">Crear Directiva</a>
+    <br><br>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Cargo</th>
+                <th>Presupuesto</th>
+                <th>Número de Integrantes</th>
+             
+            </tr>
+        </thead>
+        <tbody>
+            {% for miembro in directivas %}
+            <tr>
+                <td>{{ miembro.id }}</td>
+                <td>{{ miembro.nombre_directiva }}</td>
+                <td>{{ miembro.cargo_directiva }}</td>
+                <td>${{ miembro.presupuesto_directiva }}</td>
+                <td>{{ miembro.num_integrantes }}</td>
+                <td>
+                    <a href="{% url 'editar_directiva' miembro.id %}" class="btn btn-success btn-sm">Editar</a>
+                    <a href="{% url 'eliminar_directiva' miembro.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center alert alert-warning">
+                    No hay registros de directiva disponibles.
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

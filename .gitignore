@@ -16,3 +16,4 @@ config/__pycache__/settings.cpython-313.pyc
 /venv
 /config/__pycache__
 /venv
+.DS_Store

@@ -1,0 +1,44 @@
+{% load static %}
+{% include "private/header2.html" %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<div class="container mt-4">
+    <h3 class="text-primary mb-3"><i class="bi bi-plus-square me-2"></i> Formulario de Registro de Directiva</h3>
+    <hr>
+    <br>
+    
+    <form method="POST" action="{% url 'crear_directiva' %}">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="nombreDirectiva"><i class="bi bi-person-fill text-primary me-1"></i> Nombre Completo:</label>
+            <input type="text" name="nombreDirectiva" class="form-control shadow-sm" id="nombreDirectiva" placeholder="Ej. Juan Pérez" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="cargoDirectiva"><i class="bi bi-briefcase-fill text-secondary me-1"></i> Cargo en la Directiva:</label>
+            <input type="text" name="cargoDirectiva" class="form-control shadow-sm" id="cargoDirectiva" placeholder="Ej. Presidente, Tesorero" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="presupuestoDirectiva"><i class="bi bi-currency-dollar text-success me-1"></i> Presupuesto Asignado:</label>
+            <input type="number" step="0.01" name="presupuestoDirectiva" class="form-control shadow-sm" id="presupuestoDirectiva" placeholder="Ej. 1500.00" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="numIntegrantes"><i class="bi bi-people-fill text-warning me-1"></i> Número de Integrantes:</label>
+            <input type="number" name="numIntegrantes" class="form-control shadow-sm" id="numIntegrantes" placeholder="Ej. 5" required>
+        </div>
+        
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save me-1"></i> Guardar Directiva
+            </button>
+            <a href="{% url 'listar_directiva' %}" class="btn btn-outline-danger">
+                <i class="bi bi-arrow-left-circle me-1"></i> Cancelar
+            </a>
+        </div>
+    </form>
+</div>
+
+{% include "private/footer.html" %}

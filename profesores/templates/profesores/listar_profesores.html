@@ -1,0 +1,42 @@
+{% load static %}
+{% include "private/header2.html" %}
+
+<div class="container mt-4">
+    <h2>Lista de profesores</h2>
+    <br>
+    <a href="{% url 'crear_materias' %}" class="btn btn-dark">Crear Materia</a>
+    <br>
+</div>
+
+    <table class= "table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Créditos</th>
+                <th>Número de Estudiantes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for materia in materias %}
+            <tr>
+                <td>{{ profesores.id}}</td>
+                <td>{{ profesores.nombre_profesor}}</td>
+                <td>{{ profesores.sueldo_profesor}}</td>
+                <td>{{ profesores.curso_profesor}}</td>
+                 <td>
+                    <a href="{% url 'editar_profesor' profesor.id %}" class="btn btn-success">Editar</a>
+                    <a href="{% url 'eliminar_profesor' profesor.id %}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td class="alert alert-danger">No hay profesores disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% include "private/footer.html" %}

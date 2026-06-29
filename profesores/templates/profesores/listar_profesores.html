@@ -14,17 +14,17 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Precio</th>
-                <th>Créditos</th>
+    
               
             </tr>
         </thead>
         <tbody>
-            {% for materia in materias %}
+            {% for profesor in profesores %}
             <tr>
-                <td>{{ profesores.id}}</td>
-                <td>{{ profesores.nombre_profesor}}</td>
-                <td>{{ profesores.sueldo_profesor}}</td>
-                <td>{{ profesores.curso_profesor}}</td>
+                <td>{{ profesor.id}}</td>
+                <td>{{ profesor.nombre_profesor}}</td>
+                <td>{{ profesor.sueldo_profesor}}</td>
+                <td>{{ profesor.curso_profesor}}</td>
                  <td>
                     <a href="{% url 'editar_profesor' profesor.id %}" class="btn btn-success">Editar</a>
                     <a href="{% url 'eliminar_profesor' profesor.id %}" class="btn btn-danger">Eliminar</a>

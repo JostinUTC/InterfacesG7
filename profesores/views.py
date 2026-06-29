@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.contrib import messages
 
+from django.shortcuts import redirect, render
+from .models import Profesores
 # Create your views here.
-def listar_materias(request):
+def listar_profesores(request):
    profesores = profesores.objects.all()
    return render(request, 'profesores/listar_profesor.html', {'profesores': profesores})
 def crear_profesor(request):
@@ -25,7 +27,7 @@ def eliminar_profesor(request, id):
    profesores.delete()
    profesores.success(request, 'profesor eliminado exitosamente')
    return redirect('listar_profesores')
-def editar_profesore(request, id):
+def editar_profesor(request, id):
    profesores = profesores.objects.get(id=id)
    if request.method == 'POST':
       profesores.nombre_profesor = request.POST.get("nombreProfesor")

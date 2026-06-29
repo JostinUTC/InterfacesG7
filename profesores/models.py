@@ -1,3 +1,12 @@
 from django.db import models
 
 # Create your models here.
+
+class Profesores(models.Model):
+    nombre_profesor = models.CharField(max_length=100)
+    sueldo_profesor = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='sueldo')
+    # Usamos IntegerField para el curso (puede ser el ID del curso o el nivel)
+    curso_profesor = models.IntegerField() 
+
+    def __str__(self):
+        return self.nombre_profesor

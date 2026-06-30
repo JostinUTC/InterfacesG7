@@ -5,7 +5,7 @@
     <h3 style="text-align: center; margin-bottom: 25px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.6);" class="fw-bold">
         <i class="bi bi-lock-fill"></i> INGRESO AL SISTEMA
     </h3>
-    <form action="{% url 'login' %}" method="post" style="width: 500px; background-color: rgba(250, 252, 154, 0.9); padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+   <form action="{% url 'login' %}" method="post" style="width: 450px; background-color: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 40px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);">
         {% csrf_token %}
         <label for="">Usuario:</label>
         <input type="text" placeholder="Ingrese usuario" name="username" id="username" required class="form-control alert alert danger">

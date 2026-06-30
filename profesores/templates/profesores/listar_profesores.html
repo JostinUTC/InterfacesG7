@@ -27,7 +27,7 @@
                 <td>{{ profesor.curso_profesor}}</td>
                  <td>
                     <a href="{% url 'editar_profesor' profesor.id %}" class="btn btn-outline-success">Editar</a>
-                    <a href="{% url 'eliminar_profesor' profesor.id %}" class="btn btn-danger">Eliminar</a>
+                    <a href="{% url 'eliminar_profesor' profesor.id %}" class="btn btn-outline-danger">Eliminar</a>
                 </td>
             </tr>
             {% empty %}

@@ -5,12 +5,19 @@
     <h3 style="text-align: center; margin-bottom: 25px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.6);" class="fw-bold">
         <i class="bi bi-lock-fill"></i> INGRESO AL SISTEMA
     </h3>
-  <form action="{% url 'login' %}" method="post" style="width: 500px; background-color: rgba(250, 252, 154, 0.9); padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="width: 450px; background-color: #ffffff; padding: 40px 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border-top: 5px solid #ffc107; text-align: center;">
+
+    <img src="{% static 'public/images/logo.png' %}" alt="Logo COMIL" style="width: 90px; margin-bottom: 15px;">
+
+    <h3 style="color: #333333; font-weight: bold; margin-bottom: 5px;">Iniciar Sesión</h3>
+    <p style="color: #888888; font-size: 14px; margin-bottom: 25px;">Plataforma Académica Institucional</p>
+
+    <form action="{% url 'login' %}" method="post" style="text-align: left;">
         {% csrf_token %}
         <label for="">Usuario:</label>
         <input type="text" placeholder="Ingrese usuario" name="username" id="username" required class="form-control alert alert danger">
         <input type="password" placeholder="Ingrese contraseña" name="password" id="password" required class="form-control alert alert danger">
-        <button type="submit" class="btn btn-success form-control alert">Iniciar Sesión</button>
+<button type="submit" class="btn btn-success form-control alert">Iniciar Sesión</button>
     </form>
 </div>
 

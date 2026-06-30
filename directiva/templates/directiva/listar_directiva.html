@@ -26,7 +26,7 @@
         <tbody>
             {% for miembro in directivas %}
             <tr>
-                <td>{{ miembro.id }}</td>
+                <td><i class="bi bi-cash-stack text-success me-1"></i> ${{ miembro.presupuesto_directiva }}</td>
                 <td>{{ miembro.nombre_directiva }}</td>
                 <td>{{ miembro.cargo_directiva }}</td>
                 <td>${{ miembro.presupuesto_directiva }}</td>
